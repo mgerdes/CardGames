@@ -1,6 +1,9 @@
 package cardgames;
 
 public class Card {
+	private Rank rank;
+	private Suit suit;
+
 	public static enum Suit {
 		CLUBS, DIAMONDS, HEARTS, SPADES
 	}
@@ -9,9 +12,6 @@ public class Card {
 		ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT,
 		NINE, TEN, JACK, QUEEN, KING
 	}
-
-	private Rank rank;
-	private Suit suit;
 
 	Card(Suit suit, Rank rank) {
 		this.suit = suit;

@@ -28,8 +28,13 @@ public class Dealer {
 	}
 
 	public void determineResults(Player[] players) {
-		int i = 0;
+		int i = 1;
 		for (Player player : players) {
+			if (player.isBusted()) {
+				player.money -= player.currentRoundsBet;
+			} else {
+				player.money += player.currentRoundsBet;
+			}
 			System.out.printf("Player %d %s\n", i, (player.isBusted() ? "busted" : "did not bust"));	
 			System.out.printf("Player %d had a card value of %d\n", i, player.getHandValue());
 			i++;	

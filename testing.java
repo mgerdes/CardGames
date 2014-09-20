@@ -5,8 +5,7 @@ import java.util.*;
 public class testing {
 
 	public static void main(String[] args) {
-
-		Player p1 = new Player();
+		Player p1 = new Player(400);
 		Dealer dealer = new Dealer();
 
 		Player[] players = new Player[1];
@@ -15,8 +14,9 @@ public class testing {
 		int roundNumber = 0;
 
 		while (true) {
-
 			dealer.dealCards(players);
+
+			player1.getBet(p1);
 
 			System.out.printf("Round: %d\n", roundNumber);
 
@@ -39,5 +39,8 @@ public class testing {
 			if (roundNumber >= 10) break;
 			roundNumber++;
 		}
+
+		System.out.println("Player ended with " + p1.getCurrentMoney() + " money.");
 	}
+
 }
